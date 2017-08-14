@@ -1,0 +1,15 @@
+language: generic
+sudo: false
+services: docker
+env:
+  - IMAGE="huaixiaoz/bt"
+
+script:
+  - travis_retry docker build -t "$IMAGE" .
+
+after_success:
+  - docker images
+
+after_script:
+  - docker images
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $IMAGE
