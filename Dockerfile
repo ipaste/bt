@@ -21,4 +21,4 @@ EXPOSE 8888
 VOLUME /www
 
 WORKDIR /www
-CMD ["/etc/init.d/bt", "start", "&&", "tail", "-f", "/tmp/panelExec.log"]
+CMD /etc/init.d/bt start && touch '/tmp/panelExec.log' && tail -f '/tmp/panelExec.log'

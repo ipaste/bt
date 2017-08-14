@@ -1,5 +1,7 @@
 ## bt
 
+[![Build Status](https://travis-ci.org/llog/bt.svg?branch=master)](https://travis-ci.org/llog/bt)
+
 Run With:
 ```
 docker run --privileged --net host --name bt --hostname bt -d huaixiaoz/bt
